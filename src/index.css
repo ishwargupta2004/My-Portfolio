@@ -2157,7 +2157,7 @@ DARK THEME (example)
   color: var(--c-text);
 }
 
-.root:{
+:root {
   --c-text: #000000;
 }
 /* Skills Table */
