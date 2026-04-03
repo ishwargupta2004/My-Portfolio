@@ -3,14 +3,8 @@ import { color, motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import "./Home.css";
 
-const githubLogo = "/github.png";
-const linkedinLogo = "/linkedin.png";
-const gmailLogo = "/gmail.png";
-const instagramLogo = "/insta.png";
-const facebookLogo = "/facebook.png";
-const leetcodeLogo = "/leetcode.png";
-const whatsappLogo = "/whatsapp.png";
-const twitterLogo = "/twitter.svg";
+import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { SiLeetcode, SiGmail } from "react-icons/si";
 
 interface HeroProps {
   theme: "light" | "dark"; // pass theme from global state
@@ -24,16 +18,16 @@ export function Home({ theme }: HeroProps) {
   ];
 
   const connectLinks = [
-    { img: linkedinLogo, link: "https://www.linkedin.com/in/ishwar-gupta-9983a5315/" },
-    { img: instagramLogo, link: "https://www.instagram.com/ishwargupta2004/" },
-    { img: twitterLogo, link: "https://x.com/IshwarGupt60868" },
-    { img: whatsappLogo, link: "https://wa.me/917742213060" },
-    { img: gmailLogo, link: "mailto:eshugupta176@gmail.com" },
+    { icon: FaLinkedin, link: "https://www.linkedin.com/in/ishwar-gupta-9983a5315/" },
+    { icon: FaInstagram, link: "https://www.instagram.com/ishwargupta2004/" },
+    { icon: FaTwitter, link: "https://x.com/IshwarGupt60868" },
+    { icon: FaWhatsapp, link: "https://wa.me/917742213060" },
+    { icon: SiGmail, link: "mailto:eshugupta176@gmail.com" },
   ];
 
   const workLinks = [
-    { img: githubLogo, link: "https://github.com/ishwargupta2004" },
-    { img: leetcodeLogo, link: "https://leetcode.com/u/frostok/" },
+    { icon: FaGithub, link: "https://github.com/ishwargupta2004" },
+    { icon: SiLeetcode, link: "https://leetcode.com/u/frostok/" },
   ];
 
   const [typedRoles, setTypedRoles] = useState("");
@@ -117,8 +111,10 @@ export function Home({ theme }: HeroProps) {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 3 }}
                   variants={itemVariants}
+                  className="social-icon"
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: theme === 'dark' ? '#fff' : '#000', color: theme === 'dark' ? '#000' : '#fff' }}
                 >
-                  <img src={s.img} className="social-icon" alt="" />
+                  <s.icon size={26} />
                 </motion.a>
               ))}
             </div>
@@ -135,8 +131,10 @@ export function Home({ theme }: HeroProps) {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 3 }}
                   variants={itemVariants}
+                  className="social-icon"
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: theme === 'dark' ? '#fff' : '#000', color: theme === 'dark' ? '#000' : '#fff' }}
                 >
-                  <img src={s.img} className="social-icon" alt="" />
+                  <s.icon size={26} />
                 </motion.a>
               ))}
             </div>

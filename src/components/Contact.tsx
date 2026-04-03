@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import emailjs from "emailjs-com";
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Instagram, Twitter, MessageCircle } from "lucide-react";
 
 export function Contact() {
@@ -12,7 +11,6 @@ export function Contact() {
   });
 
   const [status, setStatus] = useState("");
-  const [sending, setSending] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,41 +19,28 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!form.name || !form.email || !form.subject || !form.message) {
-      setStatus("⚠️ Please fill all fields.");
+    if (!form.name || !form.message) {
+      setStatus("⚠️ Please fill your name and message.");
       return;
     }
 
-    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-    if (!emailPattern.test(form.email)) {
-      setStatus("⚠️ Enter a valid email address.");
-      return;
-    }
+    setStatus("Redirecting to WhatsApp...");
 
-    setSending(true);
-    setStatus("Sending...");
+    // Format text for WhatsApp
+    const text = `Hello Ishwar!\n\n*Name:* ${form.name}\n${form.email ? `*Email:* ${form.email}\n` : ""}${form.subject ? `*Subject:* ${form.subject}\n` : ""}*Message:* ${form.message}`;
+    const encodedText = encodeURIComponent(text);
+    
+    // WhatsApp URL
+    const whatsappUrl = `https://wa.me/917742213060?text=${encodedText}`;
 
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          user_email: form.email,
-          subject: form.subject,
-          message: form.message,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-      .then(() => {
-        setStatus("✅ Message sent successfully!");
-        setForm({ name: "", email: "", subject: "", message: "" });
-        setSending(false);
-      })
-      .catch(() => {
-        setStatus("❌ Failed to send message. Please try again.");
-        setSending(false);
-      });
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, "_blank");
+
+    // Clear form and status
+    setTimeout(() => {
+      setForm({ name: "", email: "", subject: "", message: "" });
+      setStatus("");
+    }, 2000);
   };
 
   const contactInfo = [
@@ -197,11 +182,10 @@ export function Contact() {
 
               <motion.button
                 type="submit"
-                disabled={sending}
-                whileHover={{ scale: sending ? 1 : 1.05 }}
-                className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white flex justify-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                className="w-full px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full text-white flex justify-center gap-2 hover:shadow-lg hover:shadow-green-500/40 transition-all font-medium text-lg"
               >
-                {sending ? "Sending..." : "Send Message"} <Send size={20} />
+                Send via WhatsApp <MessageCircle size={24} />
               </motion.button>
 
               {status && (

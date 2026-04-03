@@ -177,11 +177,13 @@
 
 /* THEME VARIABLES JUST FOR THIS SECTION */
 :root {
+  --c-text: #000000;
   --c-text-secondary: #000000; /* for light */
   --c-box: rgba(255, 255, 255, 0.9);
 }
 
 .dark {
+  --c-text: #ffffff;
   --c-text-secondary: #e5e7eb; /* for dark */
   --c-box: rgba(15, 23, 42, 0.9);
 }
@@ -330,6 +332,14 @@
   opacity: 0.78;
   font-size: .95rem;
   letter-spacing: .45px;
+  font-weight: 500;
+}
+
+.dark .counter-box p {
+  background: linear-gradient(90deg, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
 }
 
 /* NEW ACCENT — DOES NOT TOUCH EXISTING ROOT COLORS */

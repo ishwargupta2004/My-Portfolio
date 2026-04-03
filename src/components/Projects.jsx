@@ -10,7 +10,7 @@ const PROJECTS = [
     ss: "https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=1200", // Event organization mockup
     tech: ["Next.js", "MongoDB", "Groq AI", "Clerk", "Tailwind CSS"],
     live: "https://spott-gtd2.vercel.app/",
-    code: "https://github.com/eshugupta176",
+    code: "https://github.com/ishwargupta2004/Spott",
   },
   {
     title: "Divine - AI Customer Support Chatbot",
@@ -18,7 +18,7 @@ const PROJECTS = [
     ss: "https://images.pexels.com/photos/8867434/pexels-photo-8867434.jpeg?auto=compress&cs=tinysrgb&w=1200", // AI Support chatbot mockup
     tech: ["Next.js", "MongoDB", "Groq AI", "Clerk", "Tailwind CSS"],
     live: "https://chatbot-psi-gray.vercel.app/",
-    code: "https://github.com/eshugupta176",
+    code: "https://github.com/ishwargupta2004/Chatbot",
   },
   {
     title: "My_AMAZON – Full-Stack E-Commerce",
@@ -26,14 +26,14 @@ const PROJECTS = [
     ss: "https://images.pexels.com/photos/5632381/pexels-photo-5632381.jpeg?auto=compress&cs=tinysrgb&w=1200", // E-commerce mockup
     tech: ["MongoDB", "Express.js", "React", "Node.js", "JWT", "Razorpay"],
     live: "https://my-amazon-frontend.vercel.app/",
-    code: "https://github.com/eshugupta176",
+    code: "https://github.com/ishwargupta2004/My_Amazon_Frontend",
   },
   {
     title: "My_Contacts – Professional Contact Manager",
     desc: "A robust, full-stack contact management system engineered with MVC architecture. Features a mobile-first responsive design, seamless CRUD operations (Create, Read, Update, Delete), and dynamic server-side rendering for a high-performance experience.",
     ss: "https://images.pexels.com/photos/5076516/pexels-photo-5076516.jpeg?auto=compress&cs=tinysrgb&w=1200", // Sleek smartphone interaction mockup
     tech: ["Node.js", "Express.js", "MongoDB", "EJS", "Bootstrap"],
-    live: "#",
+    live: "https://my-contacts-b2cb.onrender.com",
     code: "https://github.com/ishwargupta2004/My_Contacts",
   },
   {
@@ -50,7 +50,7 @@ const PROJECTS = [
     ss: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200", // High-quality food recipe image
     tech: ["React", "MealDB API", "JavaScript", "CSS"],
     live: "https://myrecipie.vercel.app/",
-    code: "https://github.com/eshugupta176",
+    code: "https://github.com/ishwargupta2004/recipie",
   },
 ];
 
